@@ -46,7 +46,7 @@ let print_grid grid =
   List.iteri
     (fun i cell ->
       let s = match cell with None -> "." | Some v -> string_of_int v in
-      printf "%s" s ;
+      printf " %s " s ;
       if i mod 9 == 8 then print_endline "" else ())
     grid
 
@@ -90,7 +90,7 @@ let () =
   *)
   let grid =
     [
-    Some 1; Some 5; Some 4; Some 9; Some 3; Some 8; Some 2; Some 7; Some 6;
+    None;   None;   None;   None;   None;   None;   None;   None;   None;
     Some 6; Some 7; Some 9; Some 1; Some 4; Some 2; Some 8; Some 3; Some 5;
     Some 8; Some 2; Some 3; Some 7; Some 5; Some 6; Some 4; Some 9; Some 1;
     Some 4; Some 8; Some 5; Some 2; Some 7; Some 9; Some 6; Some 1; Some 3;
