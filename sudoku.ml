@@ -52,10 +52,12 @@ let print_grid grid =
     grid
 
 
+let complete grid = List.filter Option.is_none grid == []
+
 let rec solve grid =
   if valid grid
   then
-    if List.filter Option.is_none grid == []
+    if complete grid
     then Solvable grid
     else
       let enumerated = List.mapi (fun i cell -> (i, cell)) grid in
