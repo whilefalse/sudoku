@@ -34,7 +34,8 @@ let square grid n = chop (fun row column -> (row / 3 * 3) + (column / 3)) grid n
 let valid9 list =
   let not_empty = List.filter_map (fun i -> i) list in
   let unique = not_empty |> IntSet.of_list |> IntSet.to_seq in
-  Seq.fold_left (fun n _ -> n + 1) 0 unique == List.length not_empty
+  let seq_length = Seq.fold_left (fun n _ -> n + 1) 0 in
+  seq_length unique == List.length not_empty
 
 
 let valid grid =
